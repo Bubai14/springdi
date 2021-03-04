@@ -3,6 +3,7 @@
  */
 package com.playground.spring.di.controllers;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 import com.playground.spring.di.service.GreetingService;
@@ -12,22 +13,18 @@ import com.playground.spring.di.service.GreetingService;
  *
  */
 @Controller
-public class DiController {
-	
+public class I18nController {
+
 	private final GreetingService greetingService;
-	
+
 	/**
 	 * @param greetingService
 	 */
-	public DiController(GreetingService greetingService) {
+	public I18nController(@Qualifier("i18nGreetingService") GreetingService greetingService) {
 		this.greetingService = greetingService;
 	}
-
-
-
-	public String sayHello() {
-		
+	
+	public String greetings() {
 		return greetingService.greet();
 	}
-
 }

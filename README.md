@@ -1,6 +1,18 @@
 # springdi
 Spring Dependency Injection example
 
+# Dependency Injection Types
+Spring dependency injection are of three types:
+ 1. Property Injection - The dependent objects are injected as class member variables. The variables need to be annotated with @Autowired annotation. This is the least preferred option as even a null object can be injected.
+ 
+ 2. Setter Injection - The dependent objects are injected into the setter methods of the class member variables. The setter methods needs to be annotated with @Autowired annotation. This is second most preferred option.
+ 
+ 3. Constructor Injection - The dependent objects are injected into the constructor of the class where the objects the injected. No annotations are needed if there are only one constructor. Add @Autowired annotation in case if there are multiple constructors.
+
+
+# Qualifier
+When there are multiple classes inherited from common interface, then we need to designate the reference of the interface used in the classes with @Qualifier to let spring framework know which implementation class has to be injected. 
+
 # Primary Bean
 When multiple beans (e.g @Service) are created by implementing a common interface, one of those beans can be marked as a primary. The primary bean gets injected into the required classes by the Spring Framework wherever the interface is referenced. This works only when @Qualifier is not used.
 

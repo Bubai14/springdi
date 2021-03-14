@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
  * @author bubaibal
  *
  */
-@Service
+//@Service
 public class SetterGreetingService implements GreetingService {
 
 	@Override

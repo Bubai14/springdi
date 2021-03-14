@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
  * @author bubaibal
  *
  */
-@Service
+//@Service
 public class PropertyGreetingService implements GreetingService {
 
 	@Override

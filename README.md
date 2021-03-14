@@ -19,3 +19,6 @@ When multiple beans (e.g @Service) are created by implementing a common interfac
 # Profiles
 Profiles enable Spring Framework to inject different beans at each start up based on the profile the beans are attached. This is generally useful when the application needs to connect to different databases during each startup.
 Default Profiles - Any specific profile can be marked as default by @Profile({"actualProfileName", "default"}). In such cases, if any profile is not made active, the default profile will be activated.
+
+# Configuration
+The beans declared with stereotypes annotation can also be configuration in a single configuration class annotated with @Configuration. Each of these beans can be instantiated with new operator with @Bean annotation on top of each method returning the beans. All the other annotations like @Primary and @Profiles can be used with these methods as well.

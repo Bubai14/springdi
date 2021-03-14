@@ -3,21 +3,29 @@
  */
 package com.playground.spring.di.service;
 
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Service;
+import com.playground.spring.di.repository.EnglishServiceRepository;
 
 /**
  * @author bubaibal
  *
  */
-@Profile("EN")
-@Service("i18nGreetingService")
+//@Profile("EN")
+//@Service("i18nGreetingService")
 public class I18nENGreetingService implements GreetingService {
+
+	private final EnglishServiceRepository englishServiceRepository;
+	
+	/**
+	 * @param englishServiceRepository
+	 */
+	public I18nENGreetingService(EnglishServiceRepository englishServiceRepository) {
+		this.englishServiceRepository = englishServiceRepository;
+	}
 
 	@Override
 	public String greet() {
 		
-		return "Hello - EN";
+		return englishServiceRepository.getGreeting();
 	}
 
 }

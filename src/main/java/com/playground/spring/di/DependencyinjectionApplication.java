@@ -3,13 +3,18 @@ package com.playground.spring.di;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
+import com.playground.pet.PetController;
 import com.playground.spring.di.controllers.ConstructorInjectedController;
 import com.playground.spring.di.controllers.DiController;
 import com.playground.spring.di.controllers.I18nController;
 import com.playground.spring.di.controllers.PropertyInjectedController;
 import com.playground.spring.di.controllers.SetterInjectedController;
+import com.playground.spring.di.service.PrototypeBean;
+import com.playground.spring.di.service.SingletonBean;
 
+@ComponentScan({"com.playground.spring.di","com.playground.pet"})
 @SpringBootApplication
 public class DependencyinjectionApplication {
 
@@ -35,6 +40,17 @@ public class DependencyinjectionApplication {
 		System.out.println("-------Profile-------");
 		I18nController i18nController = (I18nController) context.getBean("i18nController");
 		System.out.println(i18nController.greetings());
+		
+		System.out.println("-------Pet-------");
+		PetController petController = (PetController) context.getBean("petController");
+		System.out.println(petController.whichPetTypeisBest());
+		
+		
+		SingletonBean singletonBean = (SingletonBean) context.getBean(SingletonBean.class);
+		System.out.println(singletonBean.getBeanType());
+		
+		PrototypeBean prototypeBean = (PrototypeBean) context.getBean(PrototypeBean.class);
+		System.out.println(prototypeBean.getBeanType());
 	}
 
 }

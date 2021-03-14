@@ -19,7 +19,7 @@ public class PrototypeBean {
 	 * 
 	 */
 	public PrototypeBean() {
-		System.out.println("Prototype Bean Instantiated!!!!");
+		System.out.println("Prototype Bean Instantiated!!!!!");
 	}
 
 	public String getBeanType() {

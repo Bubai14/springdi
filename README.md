@@ -22,3 +22,13 @@ Default Profiles - Any specific profile can be marked as default by @Profile({"a
 
 # Configuration
 The beans declared with stereotypes annotation can also be configuration in a single configuration class annotated with @Configuration. Each of these beans can be instantiated with new operator with @Bean annotation on top of each method returning the beans. All the other annotations like @Primary and @Profiles can be used with these methods as well.
+
+# Scopes
+Spring beans has following scopes:
+Singleton
+Prototype
+Request
+Session
+Application
+WebHook
+Custom

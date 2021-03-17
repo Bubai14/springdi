@@ -11,6 +11,8 @@ import com.playground.spring.di.controllers.DiController;
 import com.playground.spring.di.controllers.I18nController;
 import com.playground.spring.di.controllers.PropertyInjectedController;
 import com.playground.spring.di.controllers.SetterInjectedController;
+import com.playground.spring.di.datasource.FakeDataSource;
+import com.playground.spring.di.datasource.SpringDataSource;
 import com.playground.spring.di.service.PrototypeBean;
 import com.playground.spring.di.service.SingletonBean;
 
@@ -51,6 +53,12 @@ public class DependencyinjectionApplication {
 		
 		PrototypeBean prototypeBean = (PrototypeBean) context.getBean(PrototypeBean.class);
 		System.out.println(prototypeBean.getBeanType());
+		
+		FakeDataSource fakeDataSource = context.getBean(FakeDataSource.class);
+		System.out.println("fake datasource - "+fakeDataSource.toString());
+		
+		SpringDataSource springDataSource = context.getBean(SpringDataSource.class);
+		System.out.println("spring datasource - "+springDataSource.toString());
 	}
 
 }

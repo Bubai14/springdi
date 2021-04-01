@@ -1,0 +1,8 @@
+--- 
+custom: 
+  jdbcurl: ymljdbcurl
+  password: ymlpassword
+  username: ymlusername
+spring: 
+  profiles: 
+    active: cat,EN,qa

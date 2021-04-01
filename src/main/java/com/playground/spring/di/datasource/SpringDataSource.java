@@ -3,15 +3,21 @@
  */
 package com.playground.spring.di.datasource;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.ConstructorBinding;
+
 /**
  * @author bubaibal
  *
  */
+@ConfigurationProperties("custom")
+@ConstructorBinding
 public class SpringDataSource {
 	
 	private String username;
 	private String password;
 	private String jdbcUrl;
+	
 	/**
 	 * @param username
 	 * @param password

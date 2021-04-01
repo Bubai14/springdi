@@ -27,12 +27,5 @@ public class DataSourceConfig {
 		return new FakeDataSource(username, password, jdbcUrl);
 	}
 	
-	@Bean
-	SpringDataSource springDataSource(@Value("${spring.username}")String username, 
-			@Value("${spring.password}")String password, 
-			@Value("${spring.jdbcurl}")String jdbcUrl) {
-		
-		return new SpringDataSource(username, password, jdbcUrl);
-		
-	}
+	
 }

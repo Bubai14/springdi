@@ -32,3 +32,9 @@ Session
 Application
 WebHook
 Custom
+
+# Environment Properties
+To override the properties set in the properties we can add the same properties from environment variable and command line. To add a property "guru.username" from environment variable we need to add like GURU_USERNAME.
+
+#Constructor Binding
+We can directly bind configuration values with Spring beans using the constructor binding. For this we use the annotation @ConstructorBinding on the class used for reading the configuration values in bean format. Please see the class SpringDataSource. Also need to add @EnableConfigurationProperties on top the configuration class and point it to the class using constructor binding. Please see DependencyinjectionApplication class.

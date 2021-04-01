@@ -1,0 +1,5 @@
+--- 
+custom: 
+  jdbcurl: qajdbcurl
+  password: qadbpassword
+  username: qausername

@@ -2,6 +2,7 @@ package com.playground.spring.di;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
@@ -17,6 +18,7 @@ import com.playground.spring.di.service.PrototypeBean;
 import com.playground.spring.di.service.SingletonBean;
 
 @ComponentScan({"com.playground.spring.di","com.playground.pet"})
+@EnableConfigurationProperties(SpringDataSource.class)
 @SpringBootApplication
 public class DependencyinjectionApplication {
 
